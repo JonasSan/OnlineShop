@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>List characters</title>
+</head>
+<body>
+
+
+<div class="col-lg-4 ad" th:each="ad:${ads}">
+    <td th:text="'Rubrik: ' + ${ad.title}"/>
+    <br/>
+    <td th:text="'Storlek: ' + ${ad.id}"/>
+    <br/>
+</div>
+
+
+</body>
+</html>

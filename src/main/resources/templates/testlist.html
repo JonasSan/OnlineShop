@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>List characters</title>
+</head>
+<body>
+
+
+<div class="col-lg-4 ad" th:each="test:${tests}">
+    <td th:text="'ID: ' + ${test.id}"/>
+    <br/>
+    <td th:text="'Namn: ' + ${test.name}"/>
+    <br/>
+    <td th:text="'Title: ' + ${test.title}"/>
+    <br/>
+    <td th:text="'Description: ' + ${test.description}"/>
+    <br/>
+    <td th:text="'Size: ' + ${test.size}"/>
+    <br/>
+    <td th:text="'Picture: ' + ${test.picture}"/>
+    <br/>
+    <td th:text="'idBuyer: ' + ${test.idBuyer}"/>
+
+
+</div>
+
+
+</body>
+</html>
