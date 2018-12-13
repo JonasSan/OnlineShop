@@ -1,8 +1,9 @@
 package com.example.vidajoni.controller;
 
 import com.example.vidajoni.domain.ad;
-import com.example.vidajoni.domain.test;
+import com.example.vidajoni.domain.user;
 import com.example.vidajoni.repository.AdRepository;
+import com.example.vidajoni.repository.userRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,10 +18,10 @@ public class AdController {
     private AdRepository adRepository;
 
     @Autowired
-    private com.example.vidajoni.repository.testRepository testRepository;
+    private userRepository userRepository;
 
 
-    @GetMapping("/lili")
+    @GetMapping("/ads")
     public String listAds(Model model) {
 
         List<ad> ads = adRepository.findAll();
@@ -29,10 +30,10 @@ public class AdController {
 
     }
 
-    @GetMapping("/test")
-    public String listTest (Model model){
-        List<test> tests = testRepository.findAll();
-        model.addAttribute("tests", tests);
-        return "testlist";
+    @GetMapping("/user")
+    public String listUsers (Model model){
+        List<user> users = userRepository.findAll();
+        model.addAttribute("users", users);
+        return "user";
     }
 }

@@ -6,9 +6,7 @@ import lombok.*;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.time.LocalDateTime;
 
@@ -24,6 +22,12 @@ public class ad {
     @GeneratedValue
     private int id;
 
+    private LocalDateTime created;
+
+    @ManyToOne
+    private user createdBy;
+
+    @NonNull
     private String title;
 
     private String description;
@@ -32,5 +36,8 @@ public class ad {
 
     private String picture;
 
-    private int idBuyer;
+//    @ManyToOne
+//    private int idBuyer;
+
+    private Boolean isForSale = true;
 }
