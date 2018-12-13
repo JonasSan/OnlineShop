@@ -38,7 +38,16 @@ public class user {
     @OneToMany(mappedBy = "createdBy")
     private List<ad> ads = new ArrayList<>();
 
-//    @OneToMany(mappedBy = "idBuyer")
+    public user(@NonNull String name, @NonNull String userName, @NonNull String email, String address, String phoneNumber, @NonNull String password) {
+        this.name = name;
+        this.userName = userName;
+        this.email = email;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.password = password;
+    }
+
+    //    @OneToMany(mappedBy = "idBuyer")
 //    private List<ad> adsBought = new ArrayList<>();
 
 

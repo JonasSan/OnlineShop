@@ -4,10 +4,13 @@ import com.example.vidajoni.domain.ad;
 import com.example.vidajoni.domain.user;
 import com.example.vidajoni.repository.AdRepository;
 import com.example.vidajoni.repository.userRepository;
+import org.apache.tomcat.jni.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -21,6 +24,8 @@ public class AdController {
     private userRepository userRepository;
 
 
+
+
     @GetMapping("/ads")
     public String listAds(Model model) {
         List<ad> ads = adRepository.findAll();
@@ -29,18 +34,12 @@ public class AdController {
 
     }
 
-/*    @GetMapping("/user")
-    public String listUsers (Model model){
-        List<user> users = userRepository.findAll();
-        model.addAttribute("users", users);
-        return "user";
-    }*/
-
     @GetMapping("/user")
     public String listUsers (Model model){
         model.addAttribute("users", userRepository.findAll());
         return "user";
     }
+
 
     //    @GetMapping("/findAllCharacters")
     //    public String allCharacters(Model model) {
