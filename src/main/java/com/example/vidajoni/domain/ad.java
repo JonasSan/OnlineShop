@@ -17,15 +17,15 @@ import static java.time.LocalDateTime.now;
 @Getter @Setter
 @ToString
 @NoArgsConstructor
-public class ad {
+public class ad extends Auditable{
     @Id
     @GeneratedValue
     private int id;
 
-    private LocalDateTime created;
+   // private LocalDateTime created;
 
-    @ManyToOne
-    private user createdBy;
+   @ManyToOne
+   private user createdBy;
 
     @NonNull
     private String title;

@@ -23,17 +23,29 @@ public class AdController {
 
     @GetMapping("/ads")
     public String listAds(Model model) {
-
         List<ad> ads = adRepository.findAll();
         model.addAttribute("ads", ads);
         return "adlist";
 
     }
 
-    @GetMapping("/user")
+/*    @GetMapping("/user")
     public String listUsers (Model model){
         List<user> users = userRepository.findAll();
         model.addAttribute("users", users);
         return "user";
+    }*/
+
+    @GetMapping("/user")
+    public String listUsers (Model model){
+        model.addAttribute("users", userRepository.findAll());
+        return "user";
     }
+
+    //    @GetMapping("/findAllCharacters")
+    //    public String allCharacters(Model model) {
+    //        List<Character> allCharacters = repository.findAllCharacters();
+    //        model.addAttribute("characters", allCharacters);
+    //        return "showAllCharacters";
+    //    }
 }
