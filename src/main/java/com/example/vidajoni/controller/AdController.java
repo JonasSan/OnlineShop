@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.swing.text.Document;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class AdController {
@@ -26,7 +28,6 @@ public class AdController {
 
     @Autowired
     private userRepository userRepository;
-
 
 
     @GetMapping("/ads")
@@ -43,23 +44,45 @@ public class AdController {
 
 
     @GetMapping("/user")
-    public String listUsers (Model model){
+    public String listUsers(Model model) {
         model.addAttribute("users", userRepository.findAll());
         return "user";
     }
 
     @PostMapping("/newAd/submit")
-    public String createAd(Model model, RedirectAttributes redirectAttributes, @RequestParam String title,
+    public String createAd(RedirectAttributes redirectAttributes, @RequestParam String title,
                            @RequestParam String description, @RequestParam String size, @RequestParam String picture
-                           ){
+            , @RequestParam String price) {
         System.out.println("vi är här!");
-        ad ad1 = new ad(title,description, size,picture);
+        ad ad1 = new ad(title, description, size, picture, price);
         adRepository.save(ad1);
         logger.info("Ny annons skapad!");
         redirectAttributes
-                .addAttribute(ad1)
-                .addFlashAttribute("success", true);
+                .addAttribute(ad1);
+//                .addFlashAttribute("success", true);
         return "annonsvy";
+    }
+
+
+    @GetMapping("/newAd/test")
+    public String printAd(Model model) {
+        List<ad> latestAds = adRepository.findAll();
+
+        int max = 0;
+        for (ad currentAd : latestAds) {
+            if (currentAd.getId() > max)
+                max = currentAd.getId();
+        }
+        System.out.println(max);
+        Optional<ad> latestAd = adRepository.findById(max);
+
+        if (latestAd.isPresent()) {
+            model.addAttribute("latestAd", latestAd.get());
+            System.out.println(latestAd.get());
+            return "annonsvy";
+        } else {
+            return "newAd";
+        }
     }
 
     //    @GetMapping("/findAllCharacters")
