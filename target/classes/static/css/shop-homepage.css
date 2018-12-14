@@ -17,3 +17,8 @@ body {
 .adImg {
 max-width: 400px
 max-length:700px}
+
+@HomeTopArea{
+width: 1920px
+height: 1293px
+}

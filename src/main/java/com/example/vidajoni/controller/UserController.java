@@ -1,6 +1,8 @@
 package com.example.vidajoni.controller;
 
+import com.example.vidajoni.domain.ad;
 import com.example.vidajoni.domain.user;
+import com.example.vidajoni.repository.AdRepository;
 import com.example.vidajoni.repository.userRepository;
 
 import org.slf4j.Logger;
@@ -22,6 +24,8 @@ public class UserController {
 
     @Autowired
     private userRepository userRepository;
+    @Autowired
+    private AdRepository adRepository;
 
     public UserController(com.example.vidajoni.repository.userRepository userRepository) {
         this.userRepository = userRepository;
@@ -56,7 +60,7 @@ public class UserController {
     }
 
     @PostMapping("/login/submit")
-    public String login(@RequestParam String username, @RequestParam String password, RedirectAttributes redirectAttributes){
+    public String login(@RequestParam String username, @RequestParam String password, RedirectAttributes redirectAttributes, Model model){
         List<user> users = userRepository.findAll();
 
         for (user currentUser: users) {
@@ -65,6 +69,9 @@ public class UserController {
 
                     String loginSuccess = "Välkommen, "+currentUser.getUserName();
                     redirectAttributes.addFlashAttribute(loginSuccess);
+
+                    List<ad> allAds = adRepository.findAll();
+                    model.addAttribute("allAds", allAds);
                     return "annonser";
             }
         }

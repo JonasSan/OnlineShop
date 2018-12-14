@@ -38,21 +38,12 @@ public class AdController {
     public String newAd() {
         return "newAd";
     }
-    
-
-
-//    @GetMapping("/user")
-//    public String listUsers(Model model) {
-//        model.addAttribute("users", userRepository.findAll());
-//        return "user";
-//    }
 
 
     @PostMapping("/newAd/submit")
     public String createAd(Model model, RedirectAttributes redirectAttributes, @RequestParam String title,
-                           @RequestParam String description, @RequestParam String size, @RequestParam String picture
-            , @RequestParam String price) {
-        System.out.println("vi är här!");
+                           @RequestParam String description, @RequestParam String size, @RequestParam String picture, @RequestParam String price) {
+
         ad ad1 = new ad(title, description, size, picture, price);
         adRepository.save(ad1);
         logger.info("Ny annons skapad!");
@@ -77,11 +68,15 @@ public class AdController {
         } else {
             return "newAd";
         }
+//        model.addAttribute(ad1);
+//        return "annonsvy";
     }
 
     @GetMapping("/annonser")
     public String annonserTest(Model model) {
         List<ad> allAds = adRepository.findAll();
+        //denna lista ska göras om; första till sista etc
+        //begränsning för hur stor den ska vara
         model.addAttribute("allAds", allAds);
         return "annonser";
     }
