@@ -39,6 +39,11 @@ public class AdController {
         return "newAd";
     }
 
+    @GetMapping("/annonser")
+    public String annons() {
+        return "annonser";
+    }
+
 
 //    @GetMapping("/user")
 //    public String listUsers(Model model) {
