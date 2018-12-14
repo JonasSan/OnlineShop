@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.List;
+
 @Controller
 public class UserController {
 
@@ -41,4 +43,29 @@ public class UserController {
                 .addFlashAttribute("success", true);
         return "createdUser";
     }
+
+    @GetMapping("/login")
+    public String loginview(){
+        return "login";
+    }
+
+    @PostMapping("/login/submit")
+    public String login(@RequestParam String username, @RequestParam String password, RedirectAttributes redirectAttributes){
+        List<user> users = userRepository.findAll();
+
+        for (user currentUser: users) {
+
+            if (username.equals(currentUser.getUserName()) && password.equals(currentUser.getPassword())){
+
+                    String loginSuccess = "Välkommen, "+currentUser.getUserName();
+                    redirectAttributes.addFlashAttribute(loginSuccess);
+                    return "annonser";
+            }
+        }
+
+        String loginFail = "Fel användarnamn och/eller lösenord";
+        redirectAttributes.addFlashAttribute(loginFail);
+        return "login";
+    }
+
 }
