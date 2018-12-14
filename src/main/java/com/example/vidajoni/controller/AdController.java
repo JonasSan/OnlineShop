@@ -79,35 +79,6 @@ public class AdController {
         } else {
             return "newAd";
         }
-        
+
     }
-
-//
-    @GetMapping("/newAd/test")
-    public String printAd(Model model) {
-        List<ad> latestAds = adRepository.findAll();
-
-        int max = 0;
-        for (ad currentAd : latestAds) {
-            if (currentAd.getId() > max)
-                max = currentAd.getId();
-        }
-        System.out.println(max);
-        Optional<ad> latestAd = adRepository.findById(max);
-
-        if (latestAd.isPresent()) {
-            model.addAttribute("latestAd", latestAd.get());
-            System.out.println(latestAd.get());
-            return "annonsvy";
-        } else {
-            return "newAd";
-        }
-    }
-
-    //    @GetMapping("/findAllCharacters")
-    //    public String allCharacters(Model model) {
-    //        List<Character> allCharacters = repository.findAllCharacters();
-    //        model.addAttribute("characters", allCharacters);
-    //        return "showAllCharacters";
-    //    }
 }
