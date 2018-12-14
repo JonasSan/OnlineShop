@@ -27,6 +27,12 @@ public class UserController {
         this.userRepository = userRepository;
     }
 
+    @GetMapping("/user")
+    public String listUsers(Model model) {
+        model.addAttribute("users", userRepository.findAll());
+        return "user";
+    }
+
     @GetMapping("/register")
     public String register() {
         return "register";

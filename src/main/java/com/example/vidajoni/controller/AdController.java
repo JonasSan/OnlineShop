@@ -26,9 +26,6 @@ public class AdController {
     @Autowired
     private AdRepository adRepository;
 
-    @Autowired
-    private userRepository userRepository;
-
 
     @GetMapping("/ads")
     public String listAds(Model model) {
@@ -43,11 +40,11 @@ public class AdController {
     }
 
 
-    @GetMapping("/user")
-    public String listUsers(Model model) {
-        model.addAttribute("users", userRepository.findAll());
-        return "user";
-    }
+//    @GetMapping("/user")
+//    public String listUsers(Model model) {
+//        model.addAttribute("users", userRepository.findAll());
+//        return "user";
+//    }
 
 
     @PostMapping("/newAd/submit")
@@ -79,6 +76,12 @@ public class AdController {
         } else {
             return "newAd";
         }
+    }
 
+    @GetMapping("/annonser")
+    public String annonserTest(Model model) {
+        List<ad> allAds = adRepository.findAll();
+        model.addAttribute("allAds", allAds);
+        return "annonser";
     }
 }
