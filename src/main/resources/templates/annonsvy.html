@@ -33,7 +33,7 @@
 
     <div class="container">
 
-        <a class="navbar-brand" href="#">Start Bootstrap</a>
+        <a class="navbar-brand" href="#">Party-clothes</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 
@@ -49,7 +49,7 @@
 
                 <li class="nav-item">
 
-                    <a class="nav-link" href="#">Logout</a>
+                    <!--<a class="nav-link" href="#">Logout</a>-->
 
                 </li>
 
@@ -79,73 +79,38 @@
 
             <div class="row">
 
-                <!--<div class="row link">-->
-
-                <!--<div class="col-11">-->
-
-                <!--<p class="title">-->
-
-                <!--<a class="title " th:href="${link.url}" th:text="${link.title}" target="_blank">-->
-
-                <!--What's new in Spring Boot 2?-->
-
-                <!--</a>-->
-
-                <!--<span class="domain">(<a th:href="${link.url}" th:text="${link.getDomainName()}">therealdanvega.com</a>)</span>-->
-
-                <!--</p>-->
-
-                <!--<p class="tagline ">submitted-->
-
-                <!--<time th:title="${link.getCreationDate()}" th:datetime="${link.getCreationDate()}" class="live-timestamp" th:text="${link.getPrettyTime()}">2 hours ago</time> by-->
-
-                <!--<a href="/" class="author">therealdanvega</a>-->
-
-                <!--<span class="userattrs"></span>-->
-
-                <!--</p>-->
-
-                <!--<p><a th:href="${link.url}" th:text="${link.url}" target="_blank"></a> </p>-->
-
-                <!--<p>-->
-
-                <!--<a href="/" class="comments" th:text="|${link.getComments().size()} comments|"><i class="fas fa-comments"></i> 0 comments</a>-->
-
-                <!--<a href="#" class="share"><i class="fas fa-share-square"></i> share</a>-->
-
-                <!--</p>-->
-
-                <!--</div>-->
-
-                <!--</div>-->
-
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="col-lg-4">
-                        <!--<p th:text="${latestAd.title}" ></p>-->
-                        <p th:text="'Rubrik: ' + ${latestAd.title}"></p>
-                        <br/>
-                        <p th:text="'Storlek: ' + ${latestAd.size}"></p>
-                        <br/>
-                        <p th:text="'Skapad av: ' + ${latestAd.price}"></p>
-                    </div>
+                    <!--<div class="col-lg-4">-->
+                        <!--&lt;!&ndash;<p th:text="${latestAd.title}" ></p>&ndash;&gt;-->
+                        <!--<p th:text="'Rubrik: ' + ${latestAd.title}"></p>-->
+                        <!--<br/>-->
+                        <!--<p th:text="'Storlek: ' + ${latestAd.size}"></p>-->
+                        <!--<br/>-->
+                        <!--<p th:text="'Skapad av: ' + ${latestAd.price}"></p>-->
+                    <!--</div>-->
 
 
                     <div class="card h-100">
 
-                        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+
+                        <!--TODO: gör den dynamisk!-->
+
+                        <a href="#"><img class="card-img-top" src="/images/sko.jpg" alt=""></a>
+                        <!--<a href="#"><img class="card-img-top" src="${latestAd.picture}" alt=""></a>-->
 
 
                         <div class="card-body">
 
                             <h4 class="card-title">
 
-                                <a href="#">Titel</a>
+                                <p th:text="${latestAd.title}"></p>
+                                <p th:text="'Beskrivning: ' + ${latestAd.description}"></p>
+                                <p th:text="'Storlek: ' + ${latestAd.size}"></p>
+                                <p th:text="'Pris: ' + ${latestAd.price}"></p>
+                                <!--&lt;!&ndash;<a href="#">Titel</a>&ndash;&gt;-->
 
                             </h4>
 
-                            <h5>Pris </h5>
-
-                            <p class="card-text">Beskrivning</p>
 
                         </div>
 
@@ -174,18 +139,21 @@
                                 <a href="#">Kontakt</a>
 
                             </h4>
+                            <h5>Namn:</h5>
+
+                            <p class="card-text">Anna</p>
 
                             <h5>Adress:</h5>
 
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                            <p class="card-text">Bankgatan 5</p>
 
                             <h5>Email:</h5>
 
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                            <p class="card-text">anna@gmail.com</p>
 
-                            <h5>Phone:</h5>
+                            <h5>Telefonnummer:</h5>
 
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                            <p class="card-text">035867363</p>
 
                         </div>
 

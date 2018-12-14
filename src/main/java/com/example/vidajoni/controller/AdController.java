@@ -49,8 +49,9 @@ public class AdController {
         return "user";
     }
 
+
     @PostMapping("/newAd/submit")
-    public String createAd(RedirectAttributes redirectAttributes, @RequestParam String title,
+    public String createAd(Model model, RedirectAttributes redirectAttributes, @RequestParam String title,
                            @RequestParam String description, @RequestParam String size, @RequestParam String picture
             , @RequestParam String price) {
         System.out.println("vi är här!");
@@ -60,10 +61,28 @@ public class AdController {
         redirectAttributes
                 .addAttribute(ad1);
 //                .addFlashAttribute("success", true);
-        return "annonsvy";
+
+        List<ad> latestAds = adRepository.findAll();
+
+        int max = 0;
+        for (ad currentAd : latestAds) {
+            if (currentAd.getId() > max)
+                max = currentAd.getId();
+        }
+        System.out.println(max);
+        Optional<ad> latestAd = adRepository.findById(max);
+
+        if (latestAd.isPresent()) {
+            model.addAttribute("latestAd", latestAd.get());
+            System.out.println(latestAd.get());
+            return "annonsvy";
+        } else {
+            return "newAd";
+        }
+        
     }
 
-
+//
     @GetMapping("/newAd/test")
     public String printAd(Model model) {
         List<ad> latestAds = adRepository.findAll();
