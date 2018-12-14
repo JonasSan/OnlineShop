@@ -1,180 +1,93 @@
+<!--Visar den nyligen skapade annonsen-->
+
 <!DOCTYPE html>
-
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-
 <head>
-
     <meta charset="utf-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <meta name="description" content="">
-
     <meta name="author" content="">
-
-    <title>Shop Homepage - Start Bootstrap Template</title>
+    <title>Din annons</title>
 
     <!-- Bootstrap core CSS -->
-
     <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Custom styles for this template -->
-
     <link href="/css/shop-homepage.css" rel="stylesheet">
-
-
 </head>
 
 <body>
-
 <!-- Navigation -->
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-
     <div class="container">
+        <a class="navbar-brand" href="/">Party-clothes</a>
 
-        <a class="navbar-brand" href="#">Party-clothes</a>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-
         </button>
 
         <div class="collapse navbar-collapse" id="navbarResponsive">
-
             <ul class="navbar-nav ml-auto">
-
                 <li class="nav-item active">
-
                 <li class="nav-item">
-
-                    <!--<a class="nav-link" href="#">Logout</a>-->
-
+                    <a class="nav-link" href="/annonser">Alla annonser</a>
                 </li>
-
             </ul>
-
         </div>
-
     </div>
-
 </nav>
 
 <!-- Page Content -->
 
 <div class="container">
-
     <div class="row">
         <!--<div class="alert alert-success" role="alert" th:if="${success}">-->
-            <!--Your new link was created!-->
+        <!--Your new link was created!-->
         <!--</div>-->
-        <!-- /.col-lg-3 -->
-
         <div class="col-lg-12">
-
             <div class="row" id="HomeTopArea">
-
             </div>
-
             <div class="row">
-
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <!--<div class="col-lg-4">-->
-                        <!--&lt;!&ndash;<p th:text="${latestAd.title}" ></p>&ndash;&gt;-->
-                        <!--<p th:text="'Rubrik: ' + ${latestAd.title}"></p>-->
-                        <!--<br/>-->
-                        <!--<p th:text="'Storlek: ' + ${latestAd.size}"></p>-->
-                        <!--<br/>-->
-                        <!--<p th:text="'Skapad av: ' + ${latestAd.price}"></p>-->
-                    <!--</div>-->
-
-
                     <div class="card h-100">
 
-
                         <!--TODO: gör den dynamisk!-->
-
                         <a href="#"><img class="card-img-top" src="/images/sko.jpg" alt=""></a>
                         <!--<a href="#"><img class="card-img-top" src="${latestAd.picture}" alt=""></a>-->
 
-
                         <div class="card-body">
-
                             <h4 class="card-title">
 
                                 <p th:text="${latestAd.title}"></p>
                                 <p th:text="'Beskrivning: ' + ${latestAd.description}"></p>
                                 <p th:text="'Storlek: ' + ${latestAd.size}"></p>
                                 <p th:text="'Pris: ' + ${latestAd.price}"></p>
-                                <!--&lt;!&ndash;<a href="#">Titel</a>&ndash;&gt;-->
 
                             </h4>
-
-
                         </div>
-
-                        <!--<div class="card-footer">-->
-
-                        <!--<small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>-->
-
-                        <!--</div>-->
-
                     </div>
-
                 </div>
 
                 <div class="col-lg-4 col-md-6 mb-4">
-
                     <div class="card h-100">
-
-                        <!--<a href="#"><p class="card-text">Kontaktuppgifter</p>-->
-
-                        </a>
-
                         <div class="card-body">
-
                             <h4 class="card-title">
-
                                 <a href="#">Kontakt</a>
-
                             </h4>
                             <h5>Namn:</h5>
-
                             <p class="card-text">Anna</p>
-
                             <h5>Adress:</h5>
-
                             <p class="card-text">Bankgatan 5</p>
-
                             <h5>Email:</h5>
-
                             <p class="card-text">anna@gmail.com</p>
-
                             <h5>Telefonnummer:</h5>
-
                             <p class="card-text">035867363</p>
 
                         </div>
-
-                        <!--<div class="card-footer">-->
-
-                        <!--<small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>-->
-
-                        <!--</div>-->
-
                     </div>
-
                 </div>
-
             </div>
-
-            <!-- /.row -->
-
         </div>
-
-        <!-- /.col-lg-9 -->
-
     </div>
 
     <!-- /.row -->

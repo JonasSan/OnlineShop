@@ -41,7 +41,7 @@ public class UserController {
         redirectAttributes
                 .addAttribute(user1)
                 .addFlashAttribute("success", true);
-        return "createdUser";
+        return "annonser";
     }
 
     @GetMapping("/login")
