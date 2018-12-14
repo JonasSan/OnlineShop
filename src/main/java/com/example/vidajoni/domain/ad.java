@@ -40,4 +40,12 @@ public class ad extends Auditable{
 //    private int idBuyer;
 
     private Boolean isForSale = true;
+
+
+    public ad(@NonNull String title, String description, String size, String picture) {
+        this.title = title;
+        this.description = description;
+        this.size = size;
+        this.picture = picture;
+    }
 }

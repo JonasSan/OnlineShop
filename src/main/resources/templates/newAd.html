@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Registrering</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/shop-homepage.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Party-Clothes</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<div>
+    <div id="login">
+        <h3 class="text-center text-white pt-5">Register form</h3>
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                        <form id="login-form" class="form" method="post" action="/newAd/submit" >
+                            <h3 class="text-center text-info">Skapa ny annons</h3>
+                            <div class="form-group">
+                                <label for="title" class="text-info">Titel:</label><br>
+                                <input type="text" name="title" id="title" class="form-control" >
+                            </div>
+                            <div class="form-group">
+                                <label for="description" class="text-info">Beskrivning:</label><br>
+                                <input type="text" name="description" id="description" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="size" class="text-info">Storlek:</label><br>
+                                <input type="text" name="size" id="size" class="form-control" >
+                            </div>
+                            <div class="form-group">
+                                <label for="picture" class="text-info">Bild:</label><br>
+                                <input type="text" name="picture" id="picture" class="form-control" >
+                            </div>
+
+                            <div class="form-group">
+                                <!--<label for="remember-me" class="text-info"><span>Remember me</span> <span><input-->
+                                <!--id="remember-me" name="remember-me" type="checkbox"></span></label><br>-->
+                                <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
+                            </div>
+                            <!--<div id="register-link" class="text-right">-->
+                            <!--<a href="#" class="text-info">Register here</a>-->
+                            <!--</div>-->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Content -->
+        <div class="container">
+
+
+        </div>
+
+
+        <!-- /.col-lg-3 -->
+
+        <div class="col-lg-12">
+
+
+            <div class="row">
+
+                <div class="col-lg-4 col-md-6 mb-4">
+
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+
+                </div>
+                <!-- /.row -->
+
+            </div>
+            <!-- /.col-lg-9 -->
+
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+</div>
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; vidajoni 2018</p>
+    </div>
+    <!-- /.container -->
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

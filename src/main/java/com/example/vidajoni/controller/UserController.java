@@ -30,7 +30,7 @@ public class UserController {
         return "register";
     }
 
-    @PostMapping("/register/submit")
+    @PostMapping("/register")
     public String createUser(Model model, RedirectAttributes redirectAttributes, @RequestParam String name, @RequestParam String username, @RequestParam String password, @RequestParam String address, @RequestParam String email, @RequestParam String number){
         System.out.println("vi är här!");
         user user1 = new user(name, username, password, address, email, number);
